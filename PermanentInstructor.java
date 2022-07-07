@@ -1,17 +1,39 @@
+import java.util.List;
 import java.util.Objects;
 
 public class PermanentInstructor extends Instructor {
-    public PermanentInstructor(String name, String phoneNumber, String address) {
-        super(name, phoneNumber, address);
-        
+
+    private double  fixedSalary ;
+
+  
+     
+    public PermanentInstructor() {
+    }
+
+    /**
+     * @param fixedSalary
+     */
+    public PermanentInstructor(double fixedSalary) {
+        this.fixedSalary = fixedSalary;
+    }
+
+    /**
+     * @param name
+     * @param phoneNumber
+     * @param address
+     * @param courseList
+     * @param fixedSalary
+     */
+    public PermanentInstructor(String name, String phoneNumber, String address, List<Course> courseList,
+            double fixedSalary) {
+        super(name, phoneNumber, address, courseList);
+        this.fixedSalary = fixedSalary;
     }
 
 
 
 
-    private double  fixedSalary ;
 
-  
     /**
      * @return
      */
@@ -30,30 +52,7 @@ public class PermanentInstructor extends Instructor {
 
   
     
-    /* (non-Javadoc)
-     * @see Instructor#hashCode()
-     */
-    @Override
-    public int hashCode() {
-        return Objects.hash(fixedSalary);
-    }
-
-
- 
-    
-    /* (non-Javadoc)
-     * @see Instructor#equals(java.lang.Object)
-     */
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (!(obj instanceof PermanentInstructor))
-            return false;
-        PermanentInstructor other = (PermanentInstructor) obj;
-        return Double.doubleToLongBits(fixedSalary) == Double.doubleToLongBits(other.fixedSalary);
-    }
-
+   
 
   
     

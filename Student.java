@@ -17,6 +17,21 @@ public Student (){
 
   }
 
+  
+  /**
+ * @param name
+ * @param birthDate
+ * @param address
+ * @param gender
+ */
+public Student(String name, LocalDate birthDate, String address, String gender) {
+    this.name = name;
+    this.birthDate = birthDate;
+    this.address = address;
+    this.gender = gender;
+    
+}
+
 
 
 /**
@@ -100,51 +115,9 @@ public void setCourseList(List<Course> courseList) {
 }
 
 
-/**
- * @param name
- * @param birthDate
- * @param address
- * @param gender
- */
-public Student(String name, LocalDate birthDate, String address, String gender) {
-    this.name = name;
-    this.birthDate = birthDate;
-    this.address = address;
-    this.gender = gender;
-    
-}
 
 
 
-
-/* (non-Javadoc)
- * @see java.lang.Object#hashCode()
- */
-@Override
-public int hashCode() {
-    return Objects.hash(address, birthDate, courseList, gender, name);
-}
-
-
-
-
-
-
-
-/* (non-Javadoc)
- * @see java.lang.Object#equals(java.lang.Object)
- */
-@Override
-public boolean equals(Object obj) {
-    if (this == obj)
-        return true;
-    if (!(obj instanceof Student))
-        return false;
-    Student other = (Student) obj;
-    return Objects.equals(address, other.address) && Objects.equals(birthDate, other.birthDate)
-            && Objects.equals(courseList, other.courseList) && Objects.equals(gender, other.gender)
-            && Objects.equals(name, other.name);
-}
 
 
 

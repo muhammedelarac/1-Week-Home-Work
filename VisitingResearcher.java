@@ -1,24 +1,38 @@
+import java.util.List;
 import java.util.Objects;
 
 public class VisitingResearcher extends Instructor {
 
+    private double  hourlySalary ;
+
     
-  
+    
+    public VisitingResearcher() {
+    }
+
+   
+     /**
+     * @param hourlySalary
+     */
+    public VisitingResearcher(double hourlySalary) {
+        this.hourlySalary = hourlySalary;
+    }
+
     /**
      * @param name
      * @param phoneNumber
      * @param address
+     * @param courseList
+     * @param hourlySalary
      */
-    public VisitingResearcher(String name, String phoneNumber, String address) {
-        super(name, phoneNumber, address);
-      
+    public VisitingResearcher(String name, String phoneNumber, String address, List<Course> courseList,
+            double hourlySalary) {
+        super(name, phoneNumber, address, courseList);
+        this.hourlySalary = hourlySalary;
     }
 
+   
 
-
-    private double  hourlySalary ;
-
-    
     /**
      * @return
      */
@@ -35,31 +49,6 @@ public class VisitingResearcher extends Instructor {
 
     
     
- 
-    
-    /* (non-Javadoc)
-     * @see Instructor#hashCode()
-     */
-    @Override
-    public int hashCode() {
-        return Objects.hash(hourlySalary);
-    }
-
-    
-    
-    /* (non-Javadoc)
-     * @see Instructor#equals(java.lang.Object)
-     */
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj)
-            return true;
-        if (!(obj instanceof VisitingResearcher))
-            return false;
-        VisitingResearcher other = (VisitingResearcher) obj;
-        return Double.doubleToLongBits(hourlySalary) == Double.doubleToLongBits(other.hourlySalary);
-    }
-
    
     
     /* (non-Javadoc)
